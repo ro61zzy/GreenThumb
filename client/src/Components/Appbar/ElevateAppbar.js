@@ -145,7 +145,7 @@ function DrawerAppBar(props) {
                 ))}
               </Box>
               <Box>
-                <AccountCircleIcon />
+                <AccountCircleIcon sx={{fontSize:"40px"}} />
               </Box>
             </Toolbar>
           </Container>
