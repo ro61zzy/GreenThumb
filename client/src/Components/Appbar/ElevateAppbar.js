@@ -17,7 +17,7 @@ import Button from "@mui/material/Button";
 import { Container } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import BasicCard from "../Card/BasicCard"
+
 
 // import "./appbar.css";
 
@@ -90,7 +90,7 @@ function DrawerAppBar(props) {
         <AppBar
           elevation={0}
           component="nav"
-          sx={{ backgroundColor: "#fff", color: "#000", pt: "27px" }}
+          sx={{ backgroundColor: "#eeeee4", color: "#000", pt: "27px" }}
         >
           <Container maxWidth="xl">
             {" "}
@@ -174,7 +174,7 @@ function DrawerAppBar(props) {
       </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <BasicCard />
+        
       </Box>
     </Box>
   );

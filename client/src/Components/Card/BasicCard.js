@@ -8,6 +8,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import Plant from "../../Assets/rename.png"
 
 export default function MediaCard() {
   return (
@@ -18,7 +19,7 @@ export default function MediaCard() {
           <Card >
             <CardMedia
               sx={{ height: 140 }}
-              image="/static/images/cards/contemplative-reptile.jpg"
+              image={Plant}
               title="green iguana"
             />
             <CardContent>
@@ -43,7 +44,7 @@ export default function MediaCard() {
           <Card >
             <CardMedia
               sx={{ height: 140 }}
-              image="/static/images/cards/contemplative-reptile.jpg"
+              image={Plant}
               title="green iguana"
             />
             <CardContent>
@@ -68,7 +69,7 @@ export default function MediaCard() {
           <Card >
             <CardMedia
               sx={{ height: 140 }}
-              image="/static/images/cards/contemplative-reptile.jpg"
+              image={Plant}
               title="green iguana"
             />
             <CardContent>
@@ -93,7 +94,7 @@ export default function MediaCard() {
           <Card >
             <CardMedia
               sx={{ height: 140 }}
-              image="/static/images/cards/contemplative-reptile.jpg"
+              image={Plant}
               title="green iguana"
             />
             <CardContent>
