@@ -1,12 +1,16 @@
 import "./App.css";
-import PhotoG from "./Components/Gallery/PhotoG";
-
+import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
+import MediaCard from "./Components/Card/BasicCard";
+import Footer from "./Components/Footer/footer";
+import HeroSection from "./Components/Hero/HeroSection";
 
 function App() {
   return (
     <div className="App">
-      <PhotoG />
-      
+      <DrawerAppBar />
+      <HeroSection />
+      <MediaCard />
+      <Footer />
     </div>
   );
 }

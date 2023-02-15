@@ -84,13 +84,13 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", height:"70px" }}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar
           elevation={0}
           component="nav"
-          sx={{ backgroundColor: "#eeeee4", color: "#000", pt: "27px" }}
+          sx={{ backgroundColor: "#e0ebeb", color: "#000", pt: "27px" }}
         >
           <Container maxWidth="xl">
             {" "}

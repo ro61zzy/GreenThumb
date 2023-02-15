@@ -1,8 +1,29 @@
-
-.Box{
-    background: url(../../Assets/hero.jpg);
+.Box {
+    background: url(../../Assets/hero.jpg) no-repeat center center fixed;
     height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.herotext{
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: #fff;
+  font-weight: 900 !important;
+  font-size: 40px !important;
+  border: 10px solid #f1f1f1;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 350px;
+  padding: 20px;
+  text-align: center;
+  text-shadow:0 3px green;
+
 }

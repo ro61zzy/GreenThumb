@@ -1,0 +1,16 @@
+.card {
+    background: rgba(137, 137, 137, 0.13);
+    border-radius: 10px;
+}
+.plant {
+    position: relative;
+    
+}
+.Name {
+    font-weight: 700 !important;
+
+}
+.description {
+    color: #c4c4c4;
+    font-weight: 800 !important;
+}

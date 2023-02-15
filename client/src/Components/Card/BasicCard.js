@@ -1,120 +1,76 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Plant from "../../Assets/rename.png"
+import { Container, Stack } from "@mui/material";
+import './card.css'
 
 export default function MediaCard() {
   return (
-    <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }}>
+    <Container maxWidth='xl' sx={{background:"inherit"}}>
+    <Box sx={{ display: "flex", gap: "15px", flexGrow: 1}} mt='50px'>
       {/* Card 1 */}
       <Grid container spacing={2}>
         <Grid item xs={6} md={3}>
-          <Card >
-            <CardMedia
-              sx={{ height: 140 }}
-              image={Plant}
-              title="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                PlantName
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </Typography>
-            </CardContent>
-            <CardActions
-              sx={{ color: "green", justifyContent: "center", gap: "20px" }}
-            >
-              <FavoriteBorderIcon sx={{ fontSize: "42px" }} />
-              <WhatsAppIcon sx={{ fontSize: "42px" }} />
-            </CardActions>
-          </Card>
+          <Box className="card">
+            <Stack>
+              <img src={Plant} alt='plant'className="plant"/>
+              <Typography className='Name'>PlantName</Typography>
+              <Typography className="description">Description</Typography>
+              <Box sx={{gap:'10px', color:'green'}} p='20px 0'>
+              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <WhatsAppIcon sx={{ fontSize: "32px" }} />
+              </Box>
+            </Stack>
+          </Box>
         </Grid>
         {/* Card 2 */}
         <Grid item xs={6} md={3}>
-          <Card >
-            <CardMedia
-              sx={{ height: 140 }}
-              image={Plant}
-              title="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                PlantName
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </Typography>
-            </CardContent>
-            <CardActions
-              sx={{ color: "green", justifyContent: "center", gap: "20px" }}
-            >
-              <FavoriteBorderIcon sx={{ fontSize: "42px" }} />
-              <WhatsAppIcon sx={{ fontSize: "42px" }} />
-            </CardActions>
-          </Card>
+        <Box className="card">
+            <Stack>
+              <img src={Plant} alt='plant'className="plant"/>
+              <Typography className='Name'>PlantName</Typography>
+              <Typography className="description">Description</Typography>
+              <Box sx={{gap:'10px' , color:'green'}}p='20px 0' gap='20px'>
+              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <WhatsAppIcon sx={{ fontSize: "32px" }} />
+              </Box>
+            </Stack>
+          </Box>
         </Grid>
         {/* Card 3*/}
         <Grid item xs={6} md={3}>
-          <Card >
-            <CardMedia
-              sx={{ height: 140 }}
-              image={Plant}
-              title="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                PlantName
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </Typography>
-            </CardContent>
-            <CardActions
-              sx={{ color: "green", justifyContent: "center", gap: "20px" }}
-            >
-              <FavoriteBorderIcon sx={{ fontSize: "42px" }} />
-              <WhatsAppIcon sx={{ fontSize: "42px" }} />
-            </CardActions>
-          </Card>
+        <Box className="card">
+            <Stack>
+              <img src={Plant} alt='plant'className="plant"/>
+              <Typography className='Name'>PlantName</Typography>
+              <Typography className="description">Description</Typography>
+              <Box sx={{gap:'10px',  color:'green'}}p='20px 0'>
+              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <WhatsAppIcon sx={{ fontSize: "32px" }} />
+              </Box>
+            </Stack>
+          </Box>
         </Grid>
         {/* Card 4 */}
         <Grid item xs={6} md={3}>
-          <Card >
-            <CardMedia
-              sx={{ height: 140 }}
-              image={Plant}
-              title="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                PlantName
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </Typography>
-            </CardContent>
-            <CardActions
-              sx={{ color: "green", justifyContent: "center", gap: "20px" }}
-            >
-              <FavoriteBorderIcon sx={{ fontSize: "42px" }} />
-              <WhatsAppIcon sx={{ fontSize: "42px" }} />
-            </CardActions>
-          </Card>
+        <Box className="card">
+            <Stack>
+              <img src={Plant} alt='plant'className="plant"/>
+              <Typography className='Name'>PlantName</Typography>
+              <Typography className="description">Description</Typography>
+              <Box sx={{gap:'10px', color:'green'}}p='20px 0'>
+              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <WhatsAppIcon sx={{ fontSize: "32px" }} />
+              </Box>
+            </Stack>
+          </Box>
         </Grid>
       </Grid>
     </Box>
+    </Container>
   );
 }
