@@ -6,11 +6,11 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Plant from "../../Assets/rename.png"
 import { Container, Stack } from "@mui/material";
-import './card.css'
+import './favorite.css'
 
 export default function Favourites() {
   return (
-    <Container maxWidth='xl' sx={{background:"inherit"}}>
+    <Container maxWidth='xl' sx={{background:"inherit"}} id="favorites" >
     <Box sx={{ display: "flex", gap: "15px", flexGrow: 1}} mt='50px'>
       {/* Card 1 */}
       <Grid container spacing={2}>

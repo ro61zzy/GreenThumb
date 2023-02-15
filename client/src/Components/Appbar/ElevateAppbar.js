@@ -19,21 +19,15 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 
-// import "./appbar.css";
-
 import GT from "../../Assets/sprout.png";
-// import whatsapp from "../../assets/whatsapp.png";
-// import IG from "../../assets/github.png";
-// import LinkedIn from "../../assets/linkedin.png";
+
 
 const drawerWidth = 240;
 const navItems = ["Home", "Favourites"];
 
 function ElevationScroll(props) {
   const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
+  
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -47,16 +41,13 @@ function ElevationScroll(props) {
 
 ElevationScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+  
   window: PropTypes.func,
 };
 
 function DrawerAppBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false); 
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
