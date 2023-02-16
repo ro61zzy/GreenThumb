@@ -1,6 +1,6 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -21,7 +21,7 @@ export default function Favourites() {
               <Typography className='Name'>PlantName</Typography>
               <Typography className="description">Description</Typography>
               <Box sx={{gap:'10px', color:'green'}} p='20px 0'>
-              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <FavoriteIcon sx={{ fontSize: "32px" }} />
               <WhatsAppIcon sx={{ fontSize: "32px" }} />
               </Box>
             </Stack>
@@ -35,7 +35,7 @@ export default function Favourites() {
               <Typography className='Name'>PlantName</Typography>
               <Typography className="description">Description</Typography>
               <Box sx={{gap:'10px' , color:'green'}}p='20px 0' gap='20px'>
-              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <FavoriteIcon sx={{ fontSize: "32px" }} />
               <WhatsAppIcon sx={{ fontSize: "32px" }} />
               </Box>
             </Stack>
@@ -49,7 +49,7 @@ export default function Favourites() {
               <Typography className='Name'>PlantName</Typography>
               <Typography className="description">Description</Typography>
               <Box sx={{gap:'10px',  color:'green'}}p='20px 0'>
-              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <FavoriteIcon sx={{ fontSize: "32px" }} />
               <WhatsAppIcon sx={{ fontSize: "32px" }} />
               </Box>
             </Stack>
@@ -63,7 +63,7 @@ export default function Favourites() {
               <Typography className='Name'>PlantName</Typography>
               <Typography className="description">Description</Typography>
               <Box sx={{gap:'10px', color:'green'}}p='20px 0'>
-              <FavoriteBorderIcon sx={{ fontSize: "32px" }} />
+              <FavoriteIcon sx={{ fontSize: "32px" }} />
               <WhatsAppIcon sx={{ fontSize: "32px" }} />
               </Box>
             </Stack>
