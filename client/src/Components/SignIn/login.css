@@ -1,0 +1,11 @@
+:root {
+  height: 100vh;
+  background-color: "#e0ebeb";
+}
+.image {
+  background-image: url(../../Assets/Login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+}
