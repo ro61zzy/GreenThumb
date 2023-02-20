@@ -7,9 +7,9 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+// import ListItem from "@mui/material/ListItem";
+// import ListItemButton from "@mui/material/ListItemButton";
+// import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -18,16 +18,15 @@ import { Container } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-
 import GT from "../../Assets/sprout.png";
-
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = ["Home", "Favourites"];
+//const navItems = ["Home", "Favourites"];
 
 function ElevationScroll(props) {
   const { children, window } = props;
-  
+
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -41,13 +40,13 @@ function ElevationScroll(props) {
 
 ElevationScroll.propTypes = {
   children: PropTypes.element.isRequired,
-  
+
   window: PropTypes.func,
 };
 
 function DrawerAppBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false); 
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -56,18 +55,42 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        .
       </Typography>
       <Divider />
-      <List>
-        {navItems.map((item) => (
+      <Box
+        sx={{ display: "flex", flexDirection: "column", textAlign: "center" }}
+      >
+        <Link to="/home" variant="body2" style={{ textDecoration: "none" }}>
+          <Button 
+            sx={{
+              color: "#000",
+              fontFamily: "Lexend",
+              fontWeight: 400,
+              fontSize: "15px",
+              textTransform: "capitalize",
+            }}
+          >
+            Home
+          </Button>
+        </Link>
+        <Link to="/favorites" variant="body2" style={{ textDecoration: "none" }}>
+          <Button sx={{
+              color: "#000",
+              fontFamily: "Lexend",
+              fontWeight: 400,
+              fontSize: "15px",
+              textTransform: "capitalize",
+            }}>Favorites</Button>
+        </Link>
+        {/* {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
-        ))}
-      </List>
+        ))} */}
+      </Box>
     </Box>
   );
 
@@ -75,7 +98,7 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", height:"6vh" }}>
+    <Box sx={{ display: "flex", height: "6vh" }}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar
@@ -107,7 +130,11 @@ function DrawerAppBar(props) {
                 >
                   <img src={GT} alt="gt" style={{ height: "36px" }} />
                   <Typography
-                    sx={{ color: "#4A9C80", fontWeight: 900, fontSize: { xs: "30px", sm: "36px" } }}
+                    sx={{
+                      color: "#4A9C80",
+                      fontWeight: 900,
+                      fontSize: { xs: "30px", sm: "36px" },
+                    }}
                   >
                     GreenThumb
                   </Typography>
@@ -121,7 +148,46 @@ function DrawerAppBar(props) {
                   display: { xs: "none", sm: "flex" },
                 }}
               >
-                {navItems.map((item) => (
+                <Link
+                  to="/home"
+                  variant="body2"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button
+                    sx={{
+                      display: "flex",
+                      color: "#000",
+                      fontFamily: "Lexend",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      textTransform: "capitalize",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Home
+                  </Button>
+                </Link>
+
+                <Link
+                  to="/favorites"
+                  variant="body2"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button
+                    sx={{
+                      display: "flex",
+                      color: "#000",
+                      fontFamily: "Lexend",
+                      fontWeight: 400,
+                      fontSize: "20px",
+                      textTransform: "capitalize",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Favorites
+                  </Button>
+                </Link>
+                {/* {navItems.map((item) => (
                   <Button
                     key={item}
                     sx={{
@@ -134,10 +200,16 @@ function DrawerAppBar(props) {
                   >
                     {item}
                   </Button>
-                ))}
+                ))} */}
               </Box>
               <Box>
-                <AccountCircleIcon sx={{fontSize: { xs: "30px", sm: "40px" }, ml:"20px", mt:"5px"}} />
+                <AccountCircleIcon
+                  sx={{
+                    fontSize: { xs: "30px", sm: "40px" },
+                    ml: "20px",
+                    mt: "5px",
+                  }}
+                />
               </Box>
             </Toolbar>
           </Container>
@@ -165,7 +237,6 @@ function DrawerAppBar(props) {
       </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        
       </Box>
     </Box>
   );
