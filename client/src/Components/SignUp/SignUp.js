@@ -72,10 +72,11 @@ const SignUp = () => {
   };
 
   return (
-    <Container maxWidth="xs" sx={{}}>
+    <Container maxWidth="xs" >
       <Box
         sx={{
           mt: "17px",
+          pt:"35px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -84,7 +85,7 @@ const SignUp = () => {
         <LockOpenIcon
           sx={{
             color: "green",
-            fontSize: { xs: "25px", sm: "42px" },
+            fontSize: { xs: "38px", sm: "42px" },
             m: { xs: "2px", sm: "6px" },
             p: "9px",
             backgroundColor: "#e0ebeb",
@@ -107,7 +108,7 @@ const SignUp = () => {
       </div>
       <form>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12}>
             <TextField
               value={name}
               onChange={handleName}
@@ -161,7 +162,7 @@ const SignUp = () => {
         </Button>
         <Grid container mt="15px">
           <Grid item>
-            <Link href="/" variant="body2">
+            <Link href="/login" variant="body2">
               Already have an account? Log In
             </Link>
           </Grid>

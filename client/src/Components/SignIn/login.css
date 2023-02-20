@@ -1,5 +1,5 @@
 :root {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: "#e0ebeb";
 }
 .image {
@@ -8,4 +8,7 @@
   background-size: cover;
   object-fit: cover;
   background-position: center;
+}
+.lin{
+  cursor: pointer;
 }

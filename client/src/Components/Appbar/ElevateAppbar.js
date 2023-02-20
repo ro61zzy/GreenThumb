@@ -75,7 +75,7 @@ function DrawerAppBar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex", height:"70px" }}>
+    <Box sx={{ display: "flex", height:"6vh" }}>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar

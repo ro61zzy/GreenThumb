@@ -28,12 +28,13 @@ const LogIn = () => {
       });
   };
   return (
-    <Grid container height="100vh">
+    <Grid container height="69vh">
       <Grid item xs={false} sm={4} md={7} className="image"></Grid>
       <Grid item xs={12} sm={8} md={5}>
         <Box
           sx={{
-            mt: "100px",
+            mt: "30px",
+            pt:"30px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -42,7 +43,7 @@ const LogIn = () => {
           <LockOpenIcon
             sx={{
               color: "green",
-              fontSize: { xs: "25px", sm: "42px" },
+              fontSize: { xs: "35px", sm: "42px" },
               m: { xs: "2px", sm: "6px" },
               p: "9px",
               backgroundColor: "#e0ebeb",
@@ -107,7 +108,7 @@ const LogIn = () => {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="/signup" variant="body2">
+                <Link className="lin" href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
