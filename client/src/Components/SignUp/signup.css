@@ -1,0 +1,21 @@
+.messages {
+  display: flex;
+  justify-content: center;
+}
+.error {
+  display: block;
+  background-color: red;
+  color: white;
+  width: fit-content;
+  height: 30px;
+  padding: 5px;
+}
+
+.success {
+  display: block;
+  background-color: #e0ebeb;
+  color: black;
+  width: fit-content;
+  height: 30px;
+  padding: 2px 5px;
+}

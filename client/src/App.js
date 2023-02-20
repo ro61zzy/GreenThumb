@@ -1,19 +1,11 @@
 import "./App.css";
-import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
-import HeroSection from "./Components/Hero/HeroSection"
-import MediaCard from "./Components/Card/BasicCard"
-import Footer from "./Components/Footer/Footer"
-
-
-
+import LogIn from "./Components/SignIn/LogIn";
 
 
 function App() {
   return <div className="App">
-    <DrawerAppBar />
-    <HeroSection />
-    <MediaCard />
-    <Footer />
+    <LogIn />
+    
   </div>;
 }
 
