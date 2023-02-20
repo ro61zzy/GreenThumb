@@ -24,14 +24,14 @@ const myFunction = () => {
 const Description = () => {
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={1} sx={{ p: "20px 5px" }}>
+      <Grid container spacing={1} sx={{ p:{ xs: "50px 5px", sm: "50px 200px" }}}>
         <Grid item xs={6} md={3}>
           <Box>
             <Stack>
               <img src={Plant1} alt="gt" />
-              <Box sx={{ color: "green", pt: "15px" }}>
-                <FavoriteBorderIcon sx={{ fontSize: "42px" }} />
-                <WhatsAppIcon sx={{ fontSize: "42px" }} />
+              <Box sx={{ color: "green", pt: { xs: "12px", sm: "15px" }}}>
+                <FavoriteBorderIcon sx={{ fontSize: { xs: "28px", sm: "43px" }}} />
+                <WhatsAppIcon sx={{ fontSize: { xs: "28px", sm: "43px" } }} />
               </Box>
             </Stack>
           </Box>
@@ -39,7 +39,7 @@ const Description = () => {
         <Grid item xs={6} md={9}>
           <Box sx={{ display: "flex", justifyContent: "space-around" }}>
             <Typography
-              sx={{ fontSize: { xs: "13px", sm: "23px", fontWeight: "600" } }}
+              sx={{ fontSize: { xs: "13px", sm: "23px"}, fontWeight: "600"  }}
             >
               Red Roses
             </Typography>
@@ -50,14 +50,13 @@ const Description = () => {
           <Typography
             sx={{ backgroundColor: "green", fontSize: "30px", p: "3px" }}
           ></Typography>
-          <Typography sx={{ fontSize: { xs: "13px", sm: "22px" } }}>
+          <Typography sx={{ fontSize: { xs: "12px", sm: "22px" } }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim <span id="dots">...</span>
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat. <span id="dots">...</span>
             <span id="more">
-              {" "}
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              {" "}Duis aute irure dolor in reprehenderit in
               voluptate velit esse cillum dolore eu fugiat nulla pariatur.
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
               officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit

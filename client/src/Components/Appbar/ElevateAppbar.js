@@ -98,16 +98,16 @@ function DrawerAppBar(props) {
 
               <Box sx={{ flex: 0.2 }}>
                 <Typography
-                  variant="h6"
+                  variant="h3"
                   component="div"
                   sx={{
                     display: "flex",
                     alignItems: "center",
                   }}
                 >
-                  <img src={GT} alt="gt" style={{ height: "40px" }} />
+                  <img src={GT} alt="gt" style={{ height: "36px" }} />
                   <Typography
-                    sx={{ color: "#4A9C80", fontWeight: 900, fontSize: "36px" }}
+                    sx={{ color: "#4A9C80", fontWeight: 900, fontSize: { xs: "30px", sm: "36px" } }}
                   >
                     GreenThumb
                   </Typography>
@@ -137,7 +137,7 @@ function DrawerAppBar(props) {
                 ))}
               </Box>
               <Box>
-                <AccountCircleIcon sx={{fontSize:"40px"}} />
+                <AccountCircleIcon sx={{fontSize: { xs: "30px", sm: "40px" }, ml:"20px", mt:"5px"}} />
               </Box>
             </Toolbar>
           </Container>
