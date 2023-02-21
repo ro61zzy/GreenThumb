@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Plant = require("./Models/plantModel");
+const Favorite = require("./Models/favoriteModel");
 const app = express();
 
 //set dot-env variables
@@ -30,6 +31,17 @@ app.post("/plants", async (req, res) => {
   }
 });
 
+// Add favorite to database
+app.post("/favorites", async (req, res) => {
+    try {
+      const favorite = await Favorite.create(req.body);
+      res.status(200).json(favorite);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).json({ message: error.message });
+    }
+  });
+
 
 //Get plant from database
 app.get('/plants', async(req, res)=> {
@@ -41,6 +53,17 @@ app.get('/plants', async(req, res)=> {
         res.status(500).json({ message: error.message });
       }
 })
+
+// Get favorites from database
+app.get('/favorites', async(req, res)=> {
+    try{
+        const favorites = await Favorite.find({})
+        res.status(200).json(favorites);
+    }catch (error) {
+        
+        res.status(500).json({ message: error.message });
+      }
+});
 
 
 //Get specific product by ID
@@ -54,6 +77,19 @@ app.get('/plants/:id', async(req, res)=> {
         res.status(500).json({ message: error.message });
       }
 })
+
+
+// Get specific favorite by ID
+app.get('/favorites/:id', async(req, res)=> {
+    try{
+        const {id} = req.params;
+        const favorite = await Favorite.findById(id)
+        res.status(200).json(favorite);
+    }catch (error) {
+        
+        res.status(500).json({ message: error.message });
+      }
+});
 
 
 //Update or Edit data in database
@@ -73,6 +109,26 @@ app.put('/plants/:id', async(req, res)=>{
     }
 })
 
+
+// Update a favorite by ID
+app.put("/favorites/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const favorite = await Favorite.findByIdAndUpdate(id, req.body);
+      if (!favorite) {
+        return res
+          .status(404)
+          .json({ message: `cannot find favorite with ID ${id}` });
+      }
+      const updatedFavorite = await Favorite.findById(id);
+      res.status(200).json(updatedFavorite);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).json({ message: error.message });
+    }
+  });
+  
+
 //Delete/Remove data from DB
 app.delete('/plants/:id', async(req, res)=>{
     try{
@@ -87,6 +143,29 @@ app.delete('/plants/:id', async(req, res)=>{
         res.status(500).json({ message: error.message });
     }
 })
+
+
+// Delete a favorite by ID
+app.delete("/favorites/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const favorite = await Favorite.findByIdAndDelete(id);
+      if (!favorite) {
+        return res
+          .status(404)
+          .json({ message: `cannot find favorite with ID ${id}` });
+      }
+      res.status(200).json(favorite);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+
+
+
+
 
 
 
