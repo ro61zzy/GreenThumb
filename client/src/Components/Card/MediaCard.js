@@ -23,15 +23,13 @@ export default function MediaCard(props) {
       });
   }, []);
 
-  const saveFavorites = (id) => {
-    axios
-      .post(`http://localhost:8000/favorites/${id}`)
-      .then((response) => {
-        console.log("Favorite saved successfully.");
-      })
-      .catch((error) => {
-        console.error("Error saving favorite: ", error);
-      });
+  const saveFavorites = async (id) => {
+    try {
+      const response = await axios.post(`http://localhost:8000/favorites/${id}`);
+      console.log("Favorite saved successfully.");
+    } catch (error) {
+      console.error("Error saving favorite: ", error);
+    }
   };
   
 
