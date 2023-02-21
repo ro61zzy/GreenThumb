@@ -7,6 +7,10 @@ const app = express();
 require("dotenv").config();
 const { MONGO_GT } = process.env;
 
+//cors
+var cors = require('cors')
+app.use(cors())
+
 //specify middleware
 app.use(express.json());
 

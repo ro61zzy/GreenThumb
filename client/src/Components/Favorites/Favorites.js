@@ -5,15 +5,33 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { Container, Stack } from "@mui/material";
+import axios from "axios";
 import Plant from "../../Assets/rename.png";
 import "./favorite.css";
 
-export default function Favorites({ plants }) {
+export default function Favorites() {
   const [favorites, setFavorites] = React.useState([]);
+
+  React.useEffect(() => {
+    // Fetch the data from API endpoint
+    axios.get("http://localhost:8000/favorites")
+      .then((response) => {
+        setFavorites(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching favorites data: ", error);
+      });
+  }, []);
 
   const handleAddToFavorites = (id) => {
     if (!favorites.includes(id)) {
-      setFavorites((favorites) => [...favorites, id]);
+      axios.post("http://localhost:8000/favorites", { id })
+        .then((response) => {
+          setFavorites((favorites) => [...favorites, response.data.id]);
+        })
+        .catch((error) => {
+          console.error("Error adding plant to favorites: ", error);
+        });
     }
   };
 
@@ -25,18 +43,17 @@ export default function Favorites({ plants }) {
     <Container maxWidth="xl" sx={{ background: "inherit" }} id="favorites">
       <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px">
         <Grid container spacing={2}>
-          {plants.map((plant) => (
-            <Grid item xs={6} md={3} key={plant.id}>
+          {favorites.map((favorite) => (
+            <Grid item xs={6} md={3} key={favorite.id}>
               <Box className="card">
                 <Stack>
                   <img src={Plant} alt="plant" className="plant" />
-                  <Typography className="Name">{plant.name}</Typography>
-                  <Typography className="description">{plant.description}</Typography>
+                  <Typography className="Name">{favorite.name}</Typography>
+                  <Typography className="description">{favorite.description}</Typography>
                   <Box sx={{ gap: "10px", color: "green" }} p="20px">
                     <FavoriteIcon
                       sx={{ fontSize: "32px" }}
-                      color={isFavorite(plant.id) ? "error" : "action"}
-                      onClick={() => handleAddToFavorites(plant.id)}
+                      color="error"
                     />
                     <WhatsAppIcon sx={{ fontSize: "32px" }} />
                   </Box>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Typography from "@mui/material/Typography";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -13,7 +13,8 @@ export default function MediaCard(props) {
 
   React.useEffect(() => {
     // Fetch the data from API endpoint
-    axios.get("/api/v1/plants")
+    axios
+      .get("http://localhost:8000/plants")
       .then((response) => {
         setPlants(response.data);
       })
@@ -29,33 +30,44 @@ export default function MediaCard(props) {
   };
 
   const isFavorite = (id) => {
-    return props.favorites.includes(id);
+    return props.favorites && props.favorites.includes(id);
   };
+
 
   return (
     <Container maxWidth="xl" sx={{ background: "inherit" }}>
       <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px">
-        {plants.map((plant) => (
-          <Grid key={plant.id} container spacing={2}>
-            <Grid item xs={6} md={3}>
-              <Box className="card">
-                <Stack>
-                  <img src={plant.image} alt={plant.name} className="plant" />
-                  <Typography className="Name">{plant.name}</Typography>
-                  <Typography className="description">{plant.description}</Typography>
-                  <Box sx={{ gap: "10px", color: "green" }} p="20px">
-                    <FavoriteBorderIcon
-                      sx={{ fontSize: "32px" }}
-                      onClick={() => handleAddToFavorites(plant.id)}
-                      color={isFavorite(plant.id) ? "error" : "action"}
-                    />
-                    <WhatsAppIcon sx={{ fontSize: "32px" }} />
-                  </Box>
-                </Stack>
-              </Box>
-            </Grid>
-          </Grid>
-        ))}
+        <Grid container spacing={2}>
+          {plants.map((plant, key) => {
+            // console.log("hii imeenda ", plant.image);
+            let plant_image = plant.image;
+            return (
+              <Grid item xs={6} md={3} key={key}>
+                <Box className="card">
+                  <Stack>
+                    <img src={plant_image} alt="this is an " className="plant" style={{width:"360px", height:"360px", objectFit:"cover"}}   />
+
+                    <Typography className="name">{plant.name}</Typography>
+                    <Typography className="description">
+                      {plant.description}
+                    </Typography>
+                    <Typography className="price">
+                    {plant.price}
+                  </Typography>
+                    <Box sx={{ gap: "10px", color: "green" }} p="5px" pb="15px">
+                      <FavoriteBorderIcon
+                        sx={{ fontSize: "32px" }}
+                        color={isFavorite(plant.id) ? "error" : "action"}
+                        onClick={() => handleAddToFavorites(plant.id)}
+                      />
+                      <WhatsAppIcon sx={{ fontSize: "32px" }} />
+                    </Box>
+                  </Stack>
+                </Box>
+              </Grid>
+            );
+          })}
+        </Grid>
       </Box>
     </Container>
   );
