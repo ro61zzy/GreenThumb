@@ -43,8 +43,8 @@ export default function Favorites() {
     <Container maxWidth="xl" sx={{ background: "inherit" }} id="favorites">
       <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px">
         <Grid container spacing={2}>
-          {favorites.map((favorite) => (
-            <Grid item xs={6} md={3} key={favorite.id}>
+          {favorites.map((favorite, key) => (
+            <Grid item xs={6} md={3} key={key}>
               <Box className="card">
                 <Stack>
                   <img src={Plant} alt="plant" className="plant" />
