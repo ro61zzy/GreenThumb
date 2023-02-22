@@ -36,7 +36,6 @@ app.post("/favorites", async (req, res) => {
  
     try {
       const favorite = await Favorite.create(req.body);
-      console.log(req.body, "hi five five")
       res.status(200).json(favorite);
     } catch (error) {
       console.log(error.message);
@@ -79,8 +78,7 @@ app.get('/plants', async(req, res)=> {
 app.get('/favorites', async(req, res)=> {
     try{
         const favorites = await Favorite.find({})
-        res.status(200).json(favorites);
-        console.log(favorites, "empty")
+        res.status(200).json(favorites);       
     }catch (error) {
         
         res.status(500).json({ message: error.message });

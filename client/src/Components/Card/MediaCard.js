@@ -15,40 +15,25 @@ export default function MediaCard(props) {
     // Fetch the data from API endpoint
     axios.get("http://localhost:8000/plants")
       .then((response) => {
-        setPlants(response.data);
-        
+        setPlants(response.data);        
       })
       .catch((error) => {
         console.error("Error fetching plants data: ", error);
       });
   }, []);
 
-  // const saveFavorites = async (id) => {
-  //   try {
-  //     const response = await axios.post(`http://localhost:8000/favorites/${id}`);
-  //     console.log("Favorite saved successfully.");
-  //   } catch (error) {
-  //     console.error("Error saving favorite: ", error);
-  //   }
-  // };
-  
 
-  // const saveFavorites = () => {
-  //   axios.post("http://localhost:8000/favorites")    
-  //     .then((response) => {
-  //       console.log("Favorites saved successfully.");
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error is coming hapa")
-  //       console.error("Error saving favorites: ", error);
-  //     });
-  // };
 
-  const saveFavorites = (id) => {
-    console.log("Saving favorites...");
+ const saveFavorites = async (plant) => {
+    try {
+      const response = await axios.post("http://localhost:8000/favorites", plant);
+      console.log("Favorite saved successfully.");
+      alert("added to favorite")
+    } catch (error) {
+      console.error("Error saving favorite: ", error);
+    }
   };
   
- 
 
   return (
     <Container maxWidth="xl" sx={{ background: "inherit" }}>
@@ -65,8 +50,7 @@ export default function MediaCard(props) {
                       src={plant_image}
                       alt="this is an "
                       className="plant"
-                      style={{
-                        // width: "360px",
+                      style={{                        
                         height: "360px",
                         objectFit: "cover",
                       }}
@@ -78,11 +62,9 @@ export default function MediaCard(props) {
                     </Typography>
                     <Typography className="price">{plant.price}</Typography>
                     <Box sx={{ gap: "10px", color: "green" }} p="5px" pb="15px">
-                      <FavoriteBorderIcon
+                    <FavoriteBorderIcon
                         sx={{ fontSize: "32px" }}
-                        // color={isFavorite(plant.id) ? "error" : "success"}
-                        // onClick={() => handleAddToFavorites(plant.id)}
-                        onClick={() => saveFavorites(id)}
+                        onClick={() => saveFavorites(plant)}
                       />
                       <WhatsAppIcon sx={{ fontSize: "32px" }} />
                     </Box>
