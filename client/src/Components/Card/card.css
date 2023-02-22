@@ -1,6 +1,7 @@
 .card {
     background: rgba(137, 137, 137, 0.13);
     border-radius: 10px;
+    /* min-height: 400px !important; */
 }
 .plant {
     /* position: relative; */
@@ -14,8 +15,10 @@
 
 }
 .description {
-    color: #c4c4c4;
-    font-weight: 800 !important;
+    color: #696565;
+    width: 80%;
+    margin: auto !important;
+    /* font-weight: 00 !important; */
 }
 .price{
     color:#000;

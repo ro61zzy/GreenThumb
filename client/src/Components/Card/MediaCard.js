@@ -26,7 +26,7 @@ export default function MediaCard(props) {
 
  const saveFavorites = async (plant) => {
     try {
-      const response = await axios.post("http://localhost:8000/favorites", plant);
+    await axios.post("http://localhost:8000/favorites", plant);
       console.log("Favorite saved successfully.");
       alert("added to favorite")
     } catch (error) {
@@ -36,7 +36,7 @@ export default function MediaCard(props) {
   
 
   return (
-    <Container maxWidth="xl" sx={{ background: "inherit" }}>
+    <Container  maxWidth="xl" sx={{ background: "inherit" }}>
       <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px">
         <Grid container spacing={2}>
           {plants.map((plant, key) => {
@@ -61,12 +61,12 @@ export default function MediaCard(props) {
                       {plant.description}
                     </Typography>
                     <Typography className="price">{plant.price}</Typography>
-                    <Box sx={{ gap: "10px", color: "green" }} p="5px" pb="15px">
+                    <Box sx={{ display:"flex", justifyContent:"space-around", p:"0 30%", gap: "40px", color: "green" }} p="5px" pb="15px">
                     <FavoriteBorderIcon
-                        sx={{ fontSize: "32px" }}
+                        sx={{ fontSize: "42px" }}
                         onClick={() => saveFavorites(plant)}
                       />
-                      <WhatsAppIcon sx={{ fontSize: "32px" }} />
+                      <WhatsAppIcon sx={{ fontSize: "42px" }} />
                     </Box>
                   </Stack>
                 </Box>

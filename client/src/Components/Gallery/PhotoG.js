@@ -8,16 +8,16 @@ import gal3 from "../../Assets/gal3.png";
 const PhotoG = () => {
   return (
     <Box>
-      <Box sx={{ backgroundColor: "#e0ebeb" }}>
+      <Box sx={{  m:"30px" }}>
         <ImageList
           sx={{
-            width: { xs: "360px", sm: "700px" },
-            height: { xs: "180px", sm: "200px" },
+            width: { xs: "360px", sm: "950px" },
+            height: { xs: "180px", sm: "400px" },
             margin: "auto",
           }}
           cols={3}
           variant="quilted"
-          rowHeight={200}
+          rowHeight={400}
         >
           <ImageListItem cols={1} rows={1}>
             <img src={gal1} alt="images" loading="lazy" />
@@ -25,7 +25,6 @@ const PhotoG = () => {
           <ImageListItem cols={1} rows={1}>
             <img src={gal2} alt="images" loading="lazy" />
           </ImageListItem>
-
           <ImageListItem cols={1} rows={1}>
             <img src={gal3} alt="images" loading="lazy" />
           </ImageListItem>
