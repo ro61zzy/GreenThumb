@@ -33,14 +33,23 @@ app.post("/plants", async (req, res) => {
 
 // Add favorite to database
 app.post("/favorites", async (req, res) => {
+ 
     try {
       const favorite = await Favorite.create(req.body);
+      console.log(req.body, "hi five five")
       res.status(200).json(favorite);
     } catch (error) {
       console.log(error.message);
       res.status(500).json({ message: error.message });
     }
   });
+
+
+
+
+
+
+  
 
 // Add favorite to database by id
 app.post("/favorites/:id", async (req, res) => {
@@ -71,6 +80,7 @@ app.get('/favorites', async(req, res)=> {
     try{
         const favorites = await Favorite.find({})
         res.status(200).json(favorites);
+        console.log(favorites, "empty")
     }catch (error) {
         
         res.status(500).json({ message: error.message });

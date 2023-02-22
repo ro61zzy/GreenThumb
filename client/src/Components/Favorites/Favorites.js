@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState} from "react";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -10,7 +10,7 @@ import Plant from "../../Assets/rename.png";
 import "./favorite.css";
 
 export default function Favorites() {
-  const [favorites, setFavorites] = React.useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   React.useEffect(() => {
     // Fetch the data from API endpoint
@@ -23,17 +23,17 @@ export default function Favorites() {
       });
   }, []);
 
-  const handleAddToFavorites = (id) => {
-    if (!favorites.includes(id)) {
-      axios.post("http://localhost:8000/favorites", { id })
-        .then((response) => {
-          setFavorites((favorites) => [...favorites, response.data.id]);
-        })
-        .catch((error) => {
-          console.error("Error adding plant to favorites: ", error);
-        });
-    }
-  };
+  // const handleAddToFavorites = (id) => {
+  //   if (!favorites.includes(id)) {
+  //     axios.post("http://localhost:8000/favorites", { id })
+  //       .then((response) => {
+  //         setFavorites((favorites) => [...favorites, response.data.id]);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error adding plant to favorites: ", error);
+  //       });
+  //   }
+  // };
 
   const isFavorite = (id) => {
     return favorites.includes(id);
@@ -43,7 +43,9 @@ export default function Favorites() {
     <Container maxWidth="xl" sx={{ background: "inherit" }} id="favorites">
       <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px">
         <Grid container spacing={2}>
+         
           {favorites.map((favorite, key) => (
+          
             <Grid item xs={6} md={3} key={key}>
               <Box className="card">
                 <Stack>
