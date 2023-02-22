@@ -51,22 +51,24 @@ export default function MediaCard(props) {
                       alt="this is an "
                       className="plant"
                       style={{                        
-                        height: "360px",
+                        height: "340px",
                         objectFit: "cover",
                       }}
+
+                      
                     />
 
-                    <Typography className="name">{plant.name}</Typography>
-                    <Typography className="description">
+                    <Typography className="name" sx={{ fontSize: { xs: "12px", sm: "21px" }, color:"#20401e" }}>{plant.name}</Typography>
+                    <Typography className="description" sx={{ fontSize: { xs: "10px", sm: "17px" } }}>
                       {plant.description}
                     </Typography>
-                    <Typography className="price">{plant.price}</Typography>
+                    <Typography className="price" sx={{ fontSize: { xs: "13px", sm: "20px" }, fontWeight:"500" }}>{plant.price}</Typography>
                     <Box sx={{ display:"flex", justifyContent:"space-around", p:"0 30%", gap: "40px", color: "green" }} p="5px" pb="15px">
                     <FavoriteBorderIcon
-                        sx={{ fontSize: "42px" }}
+                        sx={{ fontSize: { xs: "26px", sm: "42px" } }}
                         onClick={() => saveFavorites(plant)}
                       />
-                      <WhatsAppIcon sx={{ fontSize: "42px" }} />
+                      <WhatsAppIcon sx={{ fontSize: { xs: "26px", sm: "42px" } }} />
                     </Box>
                   </Stack>
                 </Box>

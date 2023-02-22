@@ -17,7 +17,7 @@ const PhotoG = () => {
           }}
           cols={3}
           variant="quilted"
-          rowHeight={400}
+          // rowHeight={400}
         >
           <ImageListItem cols={1} rows={1}>
             <img src={gal1} alt="images" loading="lazy" />
@@ -35,3 +35,4 @@ const PhotoG = () => {
 };
 
 export default PhotoG;
+//sx={{  width: { xs: "260px", sm: "950px" }}
