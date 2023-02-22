@@ -6,7 +6,7 @@ const app = express();
 
 //set dot-env variables
 require("dotenv").config();
-const { MONGO_GT } = process.env;
+const { MONGO_GT, PORT } = process.env;
 
 //cors
 var cors = require('cors')
@@ -190,8 +190,8 @@ app.delete("/favorites/:id", async (req, res) => {
 
 
 //run your server
-app.listen(8000, () => {
-  console.log(`Node API is running on port 8000`);
+app.listen(PORT, () => {
+  console.log(`Node API is running on port ${PORT}`);
 });
 
 //connect to db
