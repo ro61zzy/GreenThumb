@@ -1,6 +1,6 @@
 .Box {
     background: url(../../Assets/hero.jpg) no-repeat center center fixed;
-    height: 100vh;
+    height:calc(100vh - 100px);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -1,16 +1,16 @@
 import "./App.css";
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter} from "react-router-dom";
 import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
-import HeroSection from "./Components/Hero/HeroSection";
-import Favourites from "./Components/Favorites/Favorites";
-import MediaCard from "./Components/Card/MediaCard";
+// import HeroSection from "./Components/Hero/HeroSection";
+// import Favourites from "./Components/Favorites/Favorites";
+// import MediaCard from "./Components/Card/MediaCard";
 import Footer from "./Components/Footer/Footer";
-import PhotoG from "./Components/Gallery/PhotoG";
+// import PhotoG from "./Components/Gallery/PhotoG";
 import HomePage from "./Components/HomePage";
 
 function App() {
-  const [favorites, setFavorites] = useState([]);
+  
   return (
     <BrowserRouter>
       <div className="App">
