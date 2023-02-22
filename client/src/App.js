@@ -7,6 +7,7 @@ import Favourites from "./Components/Favorites/Favorites";
 import MediaCard from "./Components/Card/MediaCard";
 import Footer from "./Components/Footer/Footer";
 import PhotoG from "./Components/Gallery/PhotoG";
+import HomePage from "./Components/HomePage";
 
 function App() {
   const [favorites, setFavorites] = useState([]);
@@ -14,7 +15,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <DrawerAppBar />
-        <Routes>
+        <HomePage />
+        {/* <Routes>
           <Route exact path="/" element={<HeroSection />} />
           <Route
             exact
@@ -26,7 +28,7 @@ function App() {
 
           <Route exact path="/favorites" element={<Favourites />} />
           <Route element={<PhotoG />} />
-        </Routes>
+        </Routes> */}
 
         <Footer />
       </div>
