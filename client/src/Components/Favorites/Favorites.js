@@ -38,7 +38,7 @@ export default function Favorites() {
 
   return (
     <Container maxWidth="xl" sx={{ background: "inherit" }} id="favorites">
-      <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px">
+      <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px"  >
         <Grid container spacing={2}>
           {favorites.map((favorite, key) => (
             <Grid item xs={6} md={3} key={key}>
@@ -49,22 +49,22 @@ export default function Favorites() {
                     alt="plant"
                     className="plant"
                     style={{
-                      height: "360px",
+                      height: "340px",
                       objectFit: "cover",
                     }}
                   />
-                  <Typography className="Name">{favorite.name}</Typography>
-                  <Typography className="description">
+                  <Typography className="Name" sx={{ fontSize: { xs: "12px", sm: "21px" }, color:"#20401e" }}>{favorite.name}</Typography>
+                  <Typography className="description" sx={{ fontSize: { xs: "10px", sm: "17px" } }}>
                     {favorite.description}
                   </Typography>
-                  <Box sx={{ gap: "10px", color: "green" }} p="20px">
+                  <Typography className="price" sx={{ fontSize: { xs: "13px", sm: "20px" }, fontWeight:"500" }}>{favorite.price}</Typography>
+                  <Box sx={{ display:"flex", justifyContent:"space-around", p:"0 30%", gap: "40px", color: "green" }} p="5px" pb="15px">
                     <FavoriteIcon
-                      sx={{ fontSize: "32px" }}
+                     sx={{ fontSize: { xs: "26px", sm: "42px" } }}
                       color="success"
                       onClick={() => handleDeleteFavorites(favorite._id)}
                     />
-
-                    <WhatsAppIcon sx={{ fontSize: "32px" }} />
+                    <WhatsAppIcon sx={{ fontSize: { xs: "26px", sm: "42px" } }} />
                   </Box>
                 </Stack>
               </Box>

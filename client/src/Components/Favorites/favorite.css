@@ -1,9 +1,12 @@
+/* #favorites{
+    height: 63vh;
+} */
 .card {
     background: rgba(137, 137, 137, 0.13);
     border-radius: 10px;
 }
 .plant {
-    position: relative;
+    /* position: relative; */
     
 }
 .Name {
@@ -11,6 +14,18 @@
 
 }
 .description {
+    color: #696565;
+    width: 80%;
+    margin: auto !important;
+    /* font-weight: 00 !important; */
+}
+/* .description {
     color: #c4c4c4;
     font-weight: 800 !important;
-}
+} */
+@media (max-width: 450px) {
+    .plant{
+       height: 140px !important;
+     }
+     
+   }

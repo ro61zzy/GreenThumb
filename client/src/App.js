@@ -8,29 +8,26 @@ import MediaCard from "./Components/Card/MediaCard";
 import Footer from "./Components/Footer/Footer";
 import PhotoG from "./Components/Gallery/PhotoG";
 
-
 function App() {
   const [favorites, setFavorites] = useState([]);
   return (
     <BrowserRouter>
       <div className="App">
         <DrawerAppBar />
-         <HeroSection />
-        {/*<MediaCard favorites={favorites} setFavorites={setFavorites} /> */}
-
         <Routes>
           <Route exact path="/" element={<HeroSection />} />
           <Route
             exact
-            path="/home"
+            path="/"
             element={
               <MediaCard favorites={favorites} setFavorites={setFavorites} />
             }
           />
 
           <Route exact path="/favorites" element={<Favourites />} />
+          <Route element={<PhotoG />} />
         </Routes>
-        <PhotoG />
+
         <Footer />
       </div>
     </BrowserRouter>
