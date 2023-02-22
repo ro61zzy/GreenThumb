@@ -11,8 +11,8 @@ const PhotoG = () => {
       <Box sx={{  m:"30px" }}>
         <ImageList
           sx={{
-            width: { xs: "360px", sm: "950px" },
-            height: { xs: "180px", sm: "400px" },
+            width: { xs: "260px", sm: "950px" },
+            height: { xs: "80px", sm: "400px" },
             margin: "auto",
           }}
           cols={3}

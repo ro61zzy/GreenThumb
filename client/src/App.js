@@ -15,8 +15,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <DrawerAppBar />
-        {/* <HeroSection />
-        <MediaCard favorites={favorites} setFavorites={setFavorites} /> */}
+         <HeroSection />
+        {/*<MediaCard favorites={favorites} setFavorites={setFavorites} /> */}
 
         <Routes>
           <Route exact path="/" element={<HeroSection />} />
