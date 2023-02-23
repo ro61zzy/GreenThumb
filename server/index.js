@@ -74,7 +74,7 @@ app.get("/favorites", async (req, res) => {
   }
 });
 
-//Get specific product by ID
+//Get specific plantt by ID
 app.get("/plants/:id", async (req, res) => {
   try {
     const { id } = req.params;

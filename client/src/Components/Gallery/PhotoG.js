@@ -30,9 +30,10 @@ const PhotoG = () => {
           </ImageListItem>
         </ImageList>
       </Box>
+      <Box sx={{position:"relative", height:{ xs: "20px", sm: "210px" }, width:"100vw"}} ></Box>
     </Box>
   );
 };
 
 export default PhotoG;
-//sx={{  width: { xs: "260px", sm: "950px" }}
+//sx={{  width: { xs: "100px", sm: "210px" }}

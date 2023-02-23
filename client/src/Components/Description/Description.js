@@ -1,70 +1,93 @@
-import React from "react";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+} from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import Plant1 from "../../Assets/des1.jpg";
+import axios from "axios";
 import "./desc.css";
+import { useParams } from 'react-router-dom';
 
-const myFunction = () => {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
-  }
-};
+// const myFunction = () => {
+//   var dots = document.getElementById("dots");
+//   var moreText = document.getElementById("more");
+//   var btnText = document.getElementById("myBtn");
 
-const Description = () => {
+//   if (dots.style.display === "none") {
+//     dots.style.display = "inline";
+//     btnText.innerHTML = "Read more";
+//     moreText.style.display = "none";
+//   } else {
+//     dots.style.display = "none";
+//     btnText.innerHTML = "Read less";
+//     moreText.style.display = "inline";
+//   }
+// };
+
+const Description = (props) => {
+  const [plant, setPlant] = useState({});
+  const { id } = useParams();
+ 
+
+  useEffect(() => {
+    const fetchPlant = async () => {
+        
+      const response = await axios.get(`https://green-thumb-xvb2.vercel.app/plants/${id}`);
+      setPlant(response.data);
+    };
+
+    fetchPlant();
+  }, [id]);
+
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={1} sx={{ p:{ xs: "50px 5px", sm: "50px 200px" }}}>
+      <Grid
+        container
+        spacing={1}
+        sx={{ p: { xs: "50px 5px", sm: "50px 200px" } }}
+      >
         <Grid item xs={6} md={3}>
           <Box>
             <Stack>
-              <img src={Plant1} alt="gt" />
-              <Box sx={{ color: "green", pt: { xs: "12px", sm: "15px" }}}>
-                <FavoriteBorderIcon sx={{ fontSize: { xs: "28px", sm: "43px" }}} />
+              <img src={plant.image} alt={plant.name} />
+              <Box
+                sx={{ color: "green", pt: { xs: "12px", sm: "15px" } }}
+              >
+                <FavoriteBorderIcon
+                  sx={{ fontSize: { xs: "28px", sm: "43px" } }}
+                />
                 <WhatsAppIcon sx={{ fontSize: { xs: "28px", sm: "43px" } }} />
               </Box>
             </Stack>
           </Box>
         </Grid>
         <Grid item xs={6} md={9}>
-          <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
             <Typography
-              sx={{ fontSize: { xs: "13px", sm: "23px"}, fontWeight: "600"  }}
+              sx={{ fontSize: { xs: "13px", sm: "23px" }, fontWeight: "600" }}
             >
-              Red Roses
+              {plant.name}
             </Typography>
             <Typography sx={{ fontSize: { xs: "13px", sm: "23px" } }}>
-              $5
+              {plant.price}
             </Typography>
           </Box>
           <Typography
             sx={{ backgroundColor: "green", fontSize: "30px", p: "3px" }}
           ></Typography>
           <Typography sx={{ fontSize: { xs: "12px", sm: "22px" } }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat. <span id="dots">...</span>
-            <span id="more">
-              {" "}Duis aute irure dolor in reprehenderit in
-              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit.
-            </span>
-            <Button onClick={myFunction} id="myBtn">
-              read more
-            </Button>
+            {plant.description}
           </Typography>
         </Grid>
       </Grid>

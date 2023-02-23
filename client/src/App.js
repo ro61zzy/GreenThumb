@@ -8,6 +8,7 @@ import Favourites from "./Components/Favorites/Favorites";
 import Footer from "./Components/Footer/Footer";
 // import PhotoG from "./Components/Gallery/PhotoG";
 import HomePage from "./Components/HomePage";
+import Description from "./Components/Description/Description";
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/Home" element={<HomePage />} />
           <Route exact path="/favorites" element={<Favourites />} />
+          <Route path="/plants/:id" element={<Description />}/>
           
         </Routes>
 
