@@ -37,7 +37,7 @@ export default function MediaCard(props) {
 
   return (
     <Container  maxWidth="xl" sx={{ background: "inherit" }}>
-      <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="50px">
+      <Box sx={{ display: "flex", gap: "15px", flexGrow: 1 }} mt="30px">
         <Grid container spacing={2}>
           {plants.map((plant, key) => {
             // console.log("hii imeenda ", plant.image);
