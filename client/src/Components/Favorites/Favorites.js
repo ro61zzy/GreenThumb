@@ -31,6 +31,7 @@ export default function Favorites() {
 
       // Remove the deleted favorite from the local state
       setFavorites(favorites.filter((favorite) => favorite._id !== id));
+     
     } catch (error) {
       console.error("Error deleting favorite: ", error);
     }
@@ -44,6 +45,7 @@ export default function Favorites() {
             <Grid item xs={6} md={3} key={key}>
               <Box className="card">
                 <Stack>
+                <a href={`/favorites/${favorites._id}`}>
                   <img
                     src={favorite.image}
                     alt="plant"
@@ -53,6 +55,7 @@ export default function Favorites() {
                       objectFit: "cover",
                     }}
                   />
+                  </a>
                   <Typography className="Name" sx={{ fontSize: { xs: "12px", sm: "21px" }, color:"#20401e" }}>{favorite.name}</Typography>
                   <Typography className="description" sx={{ fontSize: { xs: "10px", sm: "17px" }, height:"100px !important" }}>
                     {favorite.description}

@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/favorites" element={<Favourites />} />
           <Route path="/plants/:id" element={<Description />}/>
           
+          <Route path="/favorites/:id" element={<Description />}/>
         </Routes>
 
        

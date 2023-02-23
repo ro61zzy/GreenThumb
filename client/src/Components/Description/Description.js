@@ -16,7 +16,7 @@ const Description = (props) => {
         `https://green-thumb-xvb2.vercel.app/plants/${id}`
       );
       setPlant(response.data);
-      console.log('Plant data:', response.data);
+      // console.log('Plant data:', response.data);
     };
 
     fetchPlant();
