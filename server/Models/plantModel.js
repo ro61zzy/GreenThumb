@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const plantSchema = mongoose.Schema(
+const plantSchema = Schema(
   {
     image: { type: String, required: true },
     name: { type: String, required: true },
@@ -11,6 +11,6 @@ const plantSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const Plant = mongoose.model("Plant", plantSchema);
+const Plant = model("Plant", plantSchema);
 
 module.exports = Plant;
