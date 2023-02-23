@@ -46,11 +46,13 @@ export default function Favorites() {
               <Box className="card">
                 <Stack>
                 <a href={`/favorites/${favorites._id}`}>
+                  {console.log(favorite._id)}
                   <img
                     src={favorite.image}
                     alt="plant"
                     className="plant"
                     style={{
+                      width:"100%",
                       height: "340px",
                       objectFit: "cover",
                     }}

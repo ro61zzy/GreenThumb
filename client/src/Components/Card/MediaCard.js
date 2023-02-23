@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import { Container, Stack } from "@mui/material";
 import axios from "axios";
 import "./card.css";
-import { Link } from "react-router-dom";
+
 
 export default function MediaCard(props) {
   const [plants, setPlants] = useState([]);
