@@ -14,7 +14,7 @@ export default function Favorites() {
   useEffect(() => {
     // Fetch the data from API endpoint
     axios
-      .get("http://localhost:8000/favorites")
+      .get("https://green-thumb-xvb2.vercel.app/favorites")
       .then((response) => {
         setFavorites(response.data);
       })
@@ -25,7 +25,7 @@ export default function Favorites() {
 
   const handleDeleteFavorites = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/favorites/${id}`);
+      await axios.delete(`https://green-thumb-xvb2.vercel.app/favorites/${id}`);
       console.log("Favorite deleted successfully.");
       alert("one item deleted");
 

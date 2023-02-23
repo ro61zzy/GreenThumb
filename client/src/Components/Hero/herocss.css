@@ -24,6 +24,7 @@
   /* width: 500px; */
   padding: 20px;
   text-align: center;
-  text-shadow:0 3px green;
+  /* text-shadow:0 3px green; */
+  text-shadow: 1px 4px 13px rgba(0,128,0,0.57);
 
 }

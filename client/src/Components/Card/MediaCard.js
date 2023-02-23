@@ -13,7 +13,7 @@ export default function MediaCard(props) {
 
   useEffect(() => {
     // Fetch the data from API endpoint
-    axios.get("http://localhost:8000/plants")
+    axios.get("https://green-thumb-xvb2.vercel.app/plants/")
       .then((response) => {
         setPlants(response.data);        
       })
@@ -26,7 +26,7 @@ export default function MediaCard(props) {
 
  const saveFavorites = async (plant) => {
     try {
-    await axios.post("http://localhost:8000/favorites", plant);
+    await axios.post("https://green-thumb-xvb2.vercel.app/favorites", plant);
       console.log("Favorite saved successfully.");
       alert("added to favorite")
     } catch (error) {
