@@ -54,7 +54,7 @@ export default function Favorites() {
                     }}
                   />
                   <Typography className="Name" sx={{ fontSize: { xs: "12px", sm: "21px" }, color:"#20401e" }}>{favorite.name}</Typography>
-                  <Typography className="description" sx={{ fontSize: { xs: "10px", sm: "17px" } }}>
+                  <Typography className="description" sx={{ fontSize: { xs: "10px", sm: "17px" }, height:"100px !important" }}>
                     {favorite.description}
                   </Typography>
                   <Typography className="price" sx={{ fontSize: { xs: "13px", sm: "20px" }, fontWeight:"500" }}>{favorite.price}</Typography>

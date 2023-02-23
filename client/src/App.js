@@ -5,7 +5,7 @@ import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
 // import HeroSection from "./Components/Hero/HeroSection";
 import Favourites from "./Components/Favorites/Favorites";
 // import MediaCard from "./Components/Card/MediaCard";
-import Footer from "./Components/Footer/Footer";
+//import Footer from "./Components/Footer/Footer";
 // import PhotoG from "./Components/Gallery/PhotoG";
 import HomePage from "./Components/HomePage";
 import Description from "./Components/Description/Description";
@@ -25,7 +25,7 @@ function App() {
           
         </Routes>
 
-        <Footer />
+       
       </div>
     </BrowserRouter>
   );

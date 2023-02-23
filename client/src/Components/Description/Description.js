@@ -74,7 +74,7 @@ const Description = (props) => {
           <Typography
             sx={{ backgroundColor: "green", fontSize: "30px", p: "3px" }}
           ></Typography>
-          <Typography sx={{ fontSize: { xs: "12px", sm: "22px" } }}>
+          <Typography sx={{ fontSize: { xs: "12px", sm: "22px" }, width:  { xs: "90%", sm: "80%" }, m:"auto", fontWeight:"500", fontStyle:"italic" }}>
             {plant.description}
           </Typography>
 
@@ -82,7 +82,7 @@ const Description = (props) => {
 
           {plant && plant.details && (
             
-            <Typography sx={{ fontSize: { xs: "12px", sm: "22px" } }}>
+            <Typography sx={{ fontSize: { xs: "12px", sm: "22px" },textAlign:"left" }}>
               {console.log(plant.details)}
               {plant.details}
             </Typography>

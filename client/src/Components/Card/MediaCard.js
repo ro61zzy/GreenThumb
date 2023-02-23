@@ -69,7 +69,7 @@ export default function MediaCard(props) {
                     </Typography>
                     <Typography
                       className="description"
-                      sx={{ fontSize: { xs: "10px", sm: "17px" } }}
+                      sx={{ fontSize: { xs: "10px", sm: "17px", height:"100px !important" } }}
                     >
                       {plant.description}
                     </Typography>

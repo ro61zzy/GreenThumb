@@ -167,9 +167,23 @@ Plant 4
 
 
 
-
-
-
+      
+       
+        
+        {
+          "name": "Monstera Deliciosa",
+          "description": "The monstera deliciosa is a large, tropical plant known for its unique, perforated leaves. It is often called the 'Swiss cheese plant.'",
+          "price": "$70",
+          "image": "https://images.unsplash.com/photo-1521465192072-6926fef831fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW9uc3RlcmElMjBpbiUyMHBvdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+          "details": [
+            "The monstera deliciosa is native to the rainforests of Central and South America.",
+            "It can grow up to 10 feet tall in its natural habitat.",
+            "The perforations in the leaves are thought to help the plant withstand heavy rainfall by allowing water to pass through.",
+            "The monstera deliciosa is a popular choice for indoor spaces due to its unique appearance and relatively low maintenance requirements.",
+            "It prefers bright, indirect light and should be watered when the top inch of soil is dry to the touch."
+          ]
+        },
+       
 
 
 
