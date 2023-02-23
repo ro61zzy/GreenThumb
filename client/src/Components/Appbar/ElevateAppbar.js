@@ -83,13 +83,6 @@ function DrawerAppBar(props) {
               textTransform: "capitalize",
             }}>Favorites</Button>
         </Link>
-        {/* {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))} */}
       </Box>
     </Box>
   );
@@ -187,26 +180,13 @@ function DrawerAppBar(props) {
                     Favorites
                   </Button>
                 </Link>
-                {/* {navItems.map((item) => (
-                  <Button
-                    key={item}
-                    sx={{
-                      color: "#000",
-                      fontFamily: "Lexend",
-                      fontWeight: 400,
-                      fontSize: "20px",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {item}
-                  </Button>
-                ))} */}
+               
               </Box>
               <Box>
                 <AccountCircleIcon
                   sx={{
                     fontSize: { xs: "30px", sm: "40px" },
-                    ml: "20px",
+                    ml: "35px",
                     mt: "5px",
                   }}
                 />
