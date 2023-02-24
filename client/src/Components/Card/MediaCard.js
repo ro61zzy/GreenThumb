@@ -8,7 +8,6 @@ import { Container, Stack } from "@mui/material";
 import axios from "axios";
 import "./card.css";
 
-
 export default function MediaCard(props) {
   const [plants, setPlants] = useState([]);
 
@@ -52,7 +51,7 @@ export default function MediaCard(props) {
                         alt="this is an "
                         className="plant"
                         style={{
-                          width:"100%",
+                          width: "100%",
                           height: "340px",
                           objectFit: "cover",
                         }}
@@ -69,7 +68,13 @@ export default function MediaCard(props) {
                     </Typography>
                     <Typography
                       className="description"
-                      sx={{ fontSize: { xs: "10px", sm: "17px", height:"100px !important" } }}
+                      sx={{
+                        fontSize: {
+                          xs: "10px",
+                          sm: "17px",
+                          height: "100px !important",
+                        },
+                      }}
                     >
                       {plant.description}
                     </Typography>
@@ -97,9 +102,36 @@ export default function MediaCard(props) {
                         sx={{ fontSize: { xs: "26px", sm: "42px" } }}
                         onClick={() => saveFavorites(plant)}
                       />
-                      <WhatsAppIcon
-                        sx={{ fontSize: { xs: "26px", sm: "42px" } }}
-                      />
+
+                      <a href="#">
+                        <WhatsAppIcon
+                          sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                          onClick={() =>
+                            window.open(
+                              `https://api.whatsapp.com/send?phone=${plant.seller_phone}&text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?`
+                            )
+                          }
+                        />
+                      </a>
+
+                      {/* <a
+                        href={`https://wa.me/${plant.seller_phone}?text=Hi%2C%20I%20am%20interested%20in%20your%20plant.`}
+                      >
+                        <WhatsAppIcon
+                          sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                        />
+                      </a> */}
+
+                      {/* <a href="#">
+                        <WhatsAppIcon
+                          sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                          onClick={() =>
+                            window.open(
+                              `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?.`
+                            )
+                          }
+                        />
+                      </a> */}
                     </Box>
                   </Stack>
                 </Box>
