@@ -41,9 +41,7 @@ const SignUp = () => {
             setSubmitted(true);
             setError(false);
 
-            setTimeout(() => {
-              window.location.href = "/";
-            }, 2000);
+            window.location.href = "/";
           }
         })
         .catch((error) => {

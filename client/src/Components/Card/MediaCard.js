@@ -12,20 +12,32 @@ import jwt from "jwt-decode";
 
 export default function MediaCard(props) {
   const [plants, setPlants] = useState([]);
-  const [hasaccount, setHasAccount] = useState("no account");
+  const [hasAccount, setHasAccount] = useState("");
 
-  function hasAccount(params) {
-    const token = localStorage.token;
-    if (token === undefined) {
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
       setHasAccount("no account");
-      return;
     } else {
       const decodedToken = jwt(token);
-      setHasAccount(decodedToken.name);
+      // 
+      if (decodedToken.name) {
+        setHasAccount("existing account");
+      } else {
+        setHasAccount("no account");
+      }
     }
-  }
+  }, []);
 
   // console.log("user data", decodedToken);
+  function checkLoggedIn() {
+    var logged = window.confirm(
+      "Seems u are not logged in?, want to create an account?"
+    );
+    if (logged) {
+      window.location.href = "/signup";
+    }
+  }
 
   useEffect(() => {
     // Fetch the data from API endpoint
@@ -49,15 +61,6 @@ export default function MediaCard(props) {
       console.error("Error saving favorite: ", error);
     }
   };
-
-  function checkLoggedIn() {
-    var logged = window.confirm(
-      "Seems u are not logged in?, want to create an account?"
-    );
-    if (logged) {
-      window.location.href = "/signup";
-    }
-  }
 
   return (
     <Container maxWidth="xl" sx={{ background: "inherit" }}>
@@ -123,12 +126,14 @@ export default function MediaCard(props) {
                       p="5px"
                       pb="15px"
                     >
-                      {hasaccount === "no account" ? (
+                      {hasAccount === "no account" ? (
                         <>
                           <button className="icon-button">
                             <FavoriteBorderIcon
                               sx={{ fontSize: { xs: "26px", sm: "42px" } }}
-                              onClick={checkLoggedIn}
+                              onClick={() => {
+                                checkLoggedIn();
+                              }}
                             />
                           </button>
 

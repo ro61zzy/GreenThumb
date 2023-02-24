@@ -17,9 +17,8 @@ const LogIn = () => {
         if (response.data.status === "ok") {
           // Login successful, redirect to dashboard or homepage
           localStorage.setItem("token", response.data.token);
-          setTimeout(() => {
-            window.location.href = "/";
-          }, 2000);
+          window.location.href = "/";
+
           console.log("Login successful");
         } else {
           // Login unsuccessful, display error message

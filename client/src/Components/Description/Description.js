@@ -83,7 +83,7 @@ const Description = (props) => {
           {plant && plant.details && (
             
             <Typography sx={{ fontSize: { xs: "12px", sm: "22px" },textAlign:"left" }}>
-              {/* {console.log(plant.details)} */}
+             
               {plant.details}
             </Typography>
           )}
