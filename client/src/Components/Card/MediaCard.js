@@ -8,8 +8,24 @@ import { Container, Stack } from "@mui/material";
 import axios from "axios";
 import "./card.css";
 
+import jwt from "jwt-decode";
+
 export default function MediaCard(props) {
   const [plants, setPlants] = useState([]);
+  const [hasaccount, setHasAccount] = useState("no account");
+
+  function hasAccount(params) {
+    const token = localStorage.token;
+    if (token === undefined) {
+      setHasAccount("no account");
+      return;
+    } else {
+      const decodedToken = jwt(token);
+      setHasAccount(decodedToken.name);
+    }
+  }
+
+  // console.log("user data", decodedToken);
 
   useEffect(() => {
     // Fetch the data from API endpoint
@@ -33,6 +49,15 @@ export default function MediaCard(props) {
       console.error("Error saving favorite: ", error);
     }
   };
+
+  function checkLoggedIn() {
+    var logged = window.confirm(
+      "Seems u are not logged in?, want to create an account?"
+    );
+    if (logged) {
+      window.location.href = "/signup";
+    }
+  }
 
   return (
     <Container maxWidth="xl" sx={{ background: "inherit" }}>
@@ -98,26 +123,47 @@ export default function MediaCard(props) {
                       p="5px"
                       pb="15px"
                     >
-                       <button className="icon-button">
-                      <FavoriteBorderIcon
-                        sx={{ fontSize: { xs: "26px", sm: "42px" } }}
-                        onClick={() => saveFavorites(plant)}
-                      />
-                      </button>
+                      {hasaccount === "no account" ? (
+                        <>
+                          <button className="icon-button">
+                            <FavoriteBorderIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                              onClick={checkLoggedIn}
+                            />
+                          </button>
 
-                      
-                      <button className="icon-button"
-                        onClick={() =>
-                          window.open(
-                            `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?.`
-                          )
-                        }
-                      >
-                        <WhatsAppIcon
-                          sx={{ fontSize: { xs: "26px", sm: "42px" } }}
-                        />
-                      </button>
+                          <button
+                            className="icon-button"
+                            onClick={checkLoggedIn}
+                          >
+                            <WhatsAppIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                            />
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <button className="icon-button">
+                            <FavoriteBorderIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                              onClick={() => saveFavorites(plant)}
+                            />
+                          </button>
 
+                          <button
+                            className="icon-button"
+                            onClick={() =>
+                              window.open(
+                                `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?.`
+                              )
+                            }
+                          >
+                            <WhatsAppIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                            />
+                          </button>
+                        </>
+                      )}
                     </Box>
                   </Stack>
                 </Box>

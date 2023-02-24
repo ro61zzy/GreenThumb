@@ -3,7 +3,7 @@ import axios from "axios";
 import { Box, Button, Grid, Link, TextField, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
-import "./signup.css"
+import "./signup.css";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -35,8 +35,16 @@ const SignUp = () => {
       axios
         .post("http://localhost:8000/api/signup", { name, email, password })
         .then((response) => {
-          setSubmitted(true);
-          setError(false);
+          console.log("response", response);
+          if (response.data.token) {
+            localStorage.setItem("token", response.data.token);
+            setSubmitted(true);
+            setError(false);
+
+            setTimeout(() => {
+              window.location.href = "/";
+            }, 2000);
+          }
         })
         .catch((error) => {
           console.error(error);
@@ -44,7 +52,6 @@ const SignUp = () => {
         });
     }
   };
-  
 
   const successMessage = () => {
     return (
@@ -73,11 +80,11 @@ const SignUp = () => {
   };
 
   return (
-    <Container maxWidth="xs" >
+    <Container maxWidth="xs">
       <Box
         sx={{
           mt: "17px",
-          pt:"35px",
+          pt: "35px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

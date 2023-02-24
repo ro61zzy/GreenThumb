@@ -121,3 +121,21 @@ const LogIn = () => {
 };
 
 export default LogIn;
+
+{/* <button
+                        className="icon-button"
+                        onClick={() => {
+                          const isLoggedIn = localStorage.getItem("isLoggedIn");
+                          if (isLoggedIn) {
+                            window.open(
+                              `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?.`
+                            );
+                          } else {
+                            window.location.href = "/login";
+                          }
+                        }}
+                      >
+                        <WhatsAppIcon
+                          sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                        />
+                      </button> */}

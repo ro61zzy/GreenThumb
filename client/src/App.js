@@ -5,9 +5,9 @@ import SignUp from "./Components/SignUp/SignUp";
 import { BrowserRouter, Route, Routes} from "react-router-dom";
 import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
 import Favourites from "./Components/Favorites/Favorites";
-import Footer from "./Components/Footer/Footer";
 import HomePage from "./Components/HomePage";
 import Description from "./Components/Description/Description";
+//import Footer from "./Components/Footer/Footer";
 // import MediaCard from "./Components/Card/MediaCard";
 // import PhotoG from "./Components/Gallery/PhotoG";
 //import HeroSection from "./Components/Hero/HeroSection";
@@ -28,7 +28,7 @@ function App() {
           <Route path="/login" element={<LogIn />}/>
           <Route path="/signup" element={<SignUp />}/>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     </BrowserRouter>

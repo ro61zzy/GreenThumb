@@ -11,11 +11,10 @@ const bcrypt = require("bcrypt");
 //jwt authentication
 const jwt = require("jsonwebtoken");
 
-
 //set dot-env variables
 require("dotenv").config();
 const { MONGO_GT, PORT } = process.env;
-const secretWord = "secretword"
+const secretWord = "secretword";
 
 //cors
 var cors = require("cors");
@@ -40,14 +39,21 @@ app.post("/api/signup", async (req, res) => {
       email: req.body.email,
       password: newPassword,
     });
-    
-    res.json({ status: "ok" });
+
+    const token = jwt.sign(
+      {
+        name: req.body.name,
+        email: req.body.email,
+      },
+      secretWord
+    );
+
+    res.json({ status: "ok", token: token });
   } catch (err) {
     console.error(err);
     res.status(500).json({ status: "error", message: "Error creating user." });
   }
 });
-
 
 // allow registered user to signIn
 app.post("/api/login", async (req, res) => {
@@ -72,32 +78,12 @@ app.post("/api/login", async (req, res) => {
         secretWord
       );
 
-      return res.json({ status: "ok", token });
+      return res.json({ status: "ok", token: token });
     } else {
       return res.json({ status: "error", message: "Invalid password" });
     }
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Add plant to database
 app.post("/plants", async (req, res) => {

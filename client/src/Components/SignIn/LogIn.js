@@ -9,7 +9,6 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
@@ -17,6 +16,10 @@ const LogIn = () => {
       .then((response) => {
         if (response.data.status === "ok") {
           // Login successful, redirect to dashboard or homepage
+          localStorage.setItem("token", response.data.token);
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 2000);
           console.log("Login successful");
         } else {
           // Login unsuccessful, display error message
@@ -28,9 +31,6 @@ const LogIn = () => {
         setError("An error occurred during login. Please try again later.");
       });
   };
-  
- 
-
 
   return (
     <Grid container height="69vh">
@@ -39,7 +39,7 @@ const LogIn = () => {
         <Box
           sx={{
             mt: "30px",
-            pt:"30px",
+            pt: "30px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -95,10 +95,9 @@ const LogIn = () => {
                 {error}
               </Typography>
             )}
-             
 
             <Button
-            onClick={handleSubmit}
+              onClick={handleSubmit}
               type="submit"
               fullWidth
               variant="contained"
