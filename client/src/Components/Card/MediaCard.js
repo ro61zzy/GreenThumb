@@ -102,7 +102,7 @@ export default function MediaCard(props) {
                         sx={{ fontSize: { xs: "26px", sm: "42px" } }}
                         onClick={() => saveFavorites(plant)}
                       />
-                      <button
+                      <button className="whatsapp-button"
                         onClick={() =>
                           window.open(
                             `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?.`
