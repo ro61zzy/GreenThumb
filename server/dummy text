@@ -1,2 +1,133 @@
-https://images.unsplash.com/photo-1509928939474-1ce02eae4b62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZW5nbGlzaCUyMGl2eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60
+{
+  "name": "English Ivy",
+  "description": "English Ivy is a popular houseplant known for its trailing vines and ability to purify the air.",
+  "price": "$25",
+  "image": "https://images.unsplash.com/photo-1509928939474-1ce02eae4b62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZW5nbGlzaCUyMGl2eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+  "details": [
+    "English Ivy is native to Europe and Western Asia.",
+    "It can be grown as a hanging plant or trained to climb up trellises.",
+    "English Ivy prefers moderate to bright light and should be watered when the top inch of soil is dry.",
+    "It is a low maintenance plant that is resistant to pests and diseases.",
+    "English Ivy can improve indoor air quality by filtering out pollutants."
+  ],
+  "seller_phone":"+254717294815"
+}
 
+{
+  "name": "Snake Plant (Laurentii)",
+  "description": "The Snake Plant (Laurentii) is a popular houseplant known for its upright, sword-shaped leaves with yellow margins.",
+  "price": "$30",
+  "image":"https://plus.unsplash.com/premium_photo-1673969608352-ec2d84279614?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c25ha2UlMjBwbGFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+  "details": [
+    "The Snake Plant (Laurentii) is native to West Africa.",
+    "It is a hardy plant that can tolerate low light and infrequent watering.",
+    "The leaves of the Snake Plant (Laurentii) can grow up to 4 feet tall in ideal conditions.",
+    "It is an excellent air purifier that can remove toxins such as benzene and formaldehyde from indoor air.",
+    "The Snake Plant (Laurentii) is also known as 'Mother-in-Law's Tongue.'"
+  ],
+  "seller_phone":"+254717294815"
+}
+
+{
+  "name": "Rubber Plant",
+  "description": "The rubber plant is a popular houseplant known for its large, shiny leaves. It is native to Southeast Asia and can grow up to 100 feet tall in its natural habitat.",
+  "price": "$45",
+"image": "https://images.unsplash.com/photo-1522428938647-2baa7c899f2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHJ1YmJlciUyMHBsYW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  "details": [
+    "Rubber plants prefer bright, indirect light and should be kept out of direct sunlight.",
+    "They should be watered when the top inch of soil is dry to the touch.",
+    "Rubber plants are known for their air-purifying qualities and can help remove toxins from the air.",
+    "They are toxic to pets and should be kept out of reach of cats and dogs.",
+    "Rubber plants can be propagated by taking stem cuttings and rooting them in water or soil."
+  ],
+  "seller_phone": "+254717294815"
+}
+
+{
+  "name": "Pothos",
+  "description": "The pothos is a trailing vine with heart-shaped leaves. It is known for being an easy-to-care-for houseplant.",
+  "price": "$25",
+  "image": "https://images.unsplash.com/photo-1589523795613-c3fce27eea23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBvdGhvc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+  "details": [
+      "Pothos are native to tropical regions of Asia.",
+      "They can grow up to 10 feet long.",
+      "Pothos are excellent air purifiers and can remove harmful toxins from the air.",
+      "They prefer bright, indirect light and should be watered when the top inch of soil is dry.",
+      "Pothos are toxic to pets and should be kept out of reach."
+  ],
+  "seller_phone": "+254717294815"
+}
+
+{
+  "name": "Peace Lily",
+  "description": "The peace lily is a tropical plant known for its white flowers and dark green leaves. It is a popular choice for indoor spaces due to its ability to thrive in low light conditions.",
+  "price": "$35",
+  "image": "https://images.unsplash.com/photo-1593691509543-c55fb32d8de5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVhY2UlMjBsaWx5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  "details": [
+      "Peace lilies are native to rainforests in Central and South America.",
+      "They can grow up to 3 feet tall.",
+      "Peace lilies are known for their air-purifying abilities and can remove harmful toxins from the air.",
+      "They prefer low to medium light and should be watered when the top inch of soil is dry.",
+      "Peace lilies are toxic to pets and should be kept out of reach."
+  ],
+  "seller_phone": "+254717294815"
+}
+
+{
+  "name": "Spider Plant",
+  "description": "The spider plant is a popular houseplant known for its long, thin leaves and ability to thrive in a variety of environments.",
+  "price": "$20",
+  "image": "https://images.unsplash.com/photo-1572688484438-313a6e50c333?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+  "details": [
+      "Spider plants are native to South Africa.",
+      "They can grow up to 2 feet long.",
+      "Spider plants are known for their air-purifying abilities and can remove harmful toxins from the air.",
+      "They prefer bright, indirect light and should be watered when the top inch of soil is dry.",
+      "Spider plants are non-toxic to pets."
+  ],
+  "seller_phone": "+254717294815"
+}
+
+{
+  "name": "Aloe Vera",
+  "description": "Aloe vera is a succulent plant known for its medicinal properties. It has long, fleshy leaves that are green or gray-green in color.",
+  "price": "$25",
+  "image": "https://images.unsplash.com/photo-1581926673903-bea7b1c22522?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGFsb2UlMjB2ZXJhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+  "details": [
+      "Aloe vera is native to Africa.",
+      "It is commonly used to treat burns and other skin conditions.",
+      "It is easy to care for and can thrive in a variety of light conditions.",
+      "Aloe vera should be watered deeply but infrequently, allowing the soil to dry out between waterings."
+  ],
+  "seller_phone":"+254717294815"
+}
+
+{
+  "name": "Bird of Paradise",
+  "description": "The bird of paradise is a tropical plant known for its stunning flowers that resemble a bird's beak and plumage. It has large, glossy leaves that can reach up to 6 feet in height.",
+  "price": "$80",
+  "image": "https://plus.unsplash.com/premium_photo-1674473872726-f59a276c4287?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmlyZCUyMG9mJTIwcGFyYWRpc2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+  "details": [
+      "The bird of paradise is native to South Africa.",
+      "It can grow up to 5 feet tall indoors and up to 30 feet tall in its natural habitat.",
+      "It prefers bright, indirect light and should be watered when the top inch of soil is dry to the touch.",
+      "The bird of paradise requires a warm, humid environment and may benefit from occasional misting.",
+      "It is a slow-growing plant that can take several years to reach its full height and produce flowers."
+  ],
+  "seller_phone":"+254717294815"
+}
+
+{
+  "name": "ZZ Plant",
+  "description": "The ZZ plant is a hardy, low-maintenance plant with shiny, dark green leaves that can grow up to 3 feet in height. It is often referred to as the 'Zanzibar gem'.",
+  "price": "$45",
+  "image": "https://images.unsplash.com/photo-1622673037877-18ee56d1f990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8enolMjBwbGFudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+  "details": [
+      "The ZZ plant is native to Eastern Africa.",
+      "It can tolerate low light conditions and can go long periods without water.",
+      "The ZZ plant is poisonous if ingested and should be kept away from pets and children.",
+      "It has air-purifying properties and can help remove toxins from indoor spaces.",
+      "The ZZ plant is a slow-growing plant that can take several years to reach its full height."
+  ],
+  "seller_phone":"+254717294815"
+}
