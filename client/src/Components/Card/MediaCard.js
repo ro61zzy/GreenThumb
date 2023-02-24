@@ -103,6 +103,9 @@ export default function MediaCard(props) {
                         onClick={() => saveFavorites(plant)}
                       />
 
+             
+
+                      
                       <a href="#">
                         <WhatsAppIcon
                           sx={{ fontSize: { xs: "26px", sm: "42px" } }}
@@ -113,25 +116,6 @@ export default function MediaCard(props) {
                           }
                         />
                       </a>
-
-                      {/* <a
-                        href={`https://wa.me/${plant.seller_phone}?text=Hi%2C%20I%20am%20interested%20in%20your%20plant.`}
-                      >
-                        <WhatsAppIcon
-                          sx={{ fontSize: { xs: "26px", sm: "42px" } }}
-                        />
-                      </a> */}
-
-                      {/* <a href="#">
-                        <WhatsAppIcon
-                          sx={{ fontSize: { xs: "26px", sm: "42px" } }}
-                          onClick={() =>
-                            window.open(
-                              `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?.`
-                            )
-                          }
-                        />
-                      </a> */}
                     </Box>
                   </Stack>
                 </Box>
