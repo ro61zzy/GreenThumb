@@ -14,7 +14,7 @@ const jwt = require("jsonwebtoken");
 
 //set dot-env variables
 require("dotenv").config();
-const { MONGO_GT, PORT } = process.env;
+const { MONGO_GT, PORT, secretWord } = process.env;
 
 //cors
 var cors = require("cors");

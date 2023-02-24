@@ -13,7 +13,7 @@ const LogIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/api/login", { email, password })
+      .post("http://localhost:8000/api/login", { email, password })
       .then((response) => {
         if (response.data.status === "ok") {
           // Login successful, redirect to dashboard or homepage
