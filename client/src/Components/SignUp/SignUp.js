@@ -33,7 +33,7 @@ const SignUp = () => {
       setError(true);
     } else {
       axios
-        .post("/api/signup", { name, email, password })
+        .post("http://localhost:8000/api/signup", { name, email, password })
         .then((response) => {
           setSubmitted(true);
           setError(false);

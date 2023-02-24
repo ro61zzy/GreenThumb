@@ -1,11 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const Plant = require("./Models/plantModel");
+const User = require("./Models/userModel");
 const Favorite = require("./Models/favoriteModel");
 const app = express();
 
 //user password encryption
 const bcrypt = require("bcrypt");
+
+//jwt authentication
+const jwt = require("jsonwebtoken");
+
 
 //set dot-env variables
 require("dotenv").config();
@@ -34,12 +39,45 @@ app.post("/api/signup", async (req, res) => {
       email: req.body.email,
       password: newPassword,
     });
+    
     res.json({ status: "ok" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ status: "error", message: "Error creating user." });
   }
 });
+
+
+// allow registered user to signIn
+app.post("/api/login", async (req, res) => {
+  const user = await User.findOne({
+    email: req.body.email,
+  });
+
+  if (!user) {
+    return res.json({ status: "error", message: "User not found" });
+  } else {
+    const isPasswordValid = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (isPasswordValid) {
+      const token = jwt.sign(
+        {
+          name: user.name,
+          email: user.email,
+          avatar: user.avatar,
+        },
+        secretWord
+      );
+
+      return res.json({ status: "ok", token });
+    } else {
+      return res.json({ status: "error", message: "Invalid password" });
+    }
+  }
+});
+
 
 
 

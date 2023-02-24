@@ -9,13 +9,12 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/api/login", { email, password })
+      .post("/login", { email, password })
       .then((response) => {
-        if (response.data.status === "ok") {
+        if (response.data.success) {
           // Login successful, redirect to dashboard or homepage
           console.log("Login successful");
         } else {
@@ -28,9 +27,6 @@ const LogIn = () => {
         setError("An error occurred during login. Please try again later.");
       });
   };
-  
-
-
   return (
     <Grid container height="69vh">
       <Grid item xs={false} sm={4} md={7} className="image"></Grid>
