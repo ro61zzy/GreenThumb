@@ -104,7 +104,7 @@ export default function Favorites() {
                             className="icon-button"
                             onClick={() =>
                               window.open(
-                                `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in your ${plant.name} plant listed on GreenThumb, could I please get more info?.`
+                                `https://wa.me/${favorite.seller_phone}?text=Hello! I'm interested in your ${favorite.name} plant listed on GreenThumb, could I please get more info?.`
                               )
                             }
                           >
