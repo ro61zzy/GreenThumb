@@ -12,7 +12,7 @@ const LogIn = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/login", { email, password })
+      .post("https://green-thumb-xvb2.vercel.app/api/login", { email, password })
       .then((response) => {
         if (response.data.success) {
           // Login successful, redirect to dashboard or homepage

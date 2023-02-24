@@ -33,7 +33,7 @@ const SignUp = () => {
       setError(true);
     } else {
       axios
-        .post("http://localhost:8000/api/signup", { name, email, password })
+        .post("https://green-thumb-xvb2.vercel.app/api/signup", { name, email, password })
         .then((response) => {
           console.log("response", response);
           if (response.data.token) {
