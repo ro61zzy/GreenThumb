@@ -23,9 +23,11 @@
     font-weight: 600 !important;
 }
 
-.whatsapp-button {
+.icon-button {
     color: green;
     background-color: transparent;
+    border: 2px solid #18990a;
+    border-radius: 50px;
     /* border: none; */
     cursor: pointer;
   }
