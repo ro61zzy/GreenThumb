@@ -7,6 +7,7 @@ const plantSchema = Schema(
     price: { type: String, required: true },
     description: { type: String, required: true },
     details: { type: Object, required: true },
+    seller_phone: { type: String, required: true }
   },
   { timestamps: true }
 );

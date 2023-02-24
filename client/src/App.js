@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
-import SignUp from "./Components/SignUp/SignUp";
+import LogIn from "./Components/SignIn/LogIn";
+//import SignUp from "./Components/SignUp/SignUp";
 // import { BrowserRouter, Route, Routes} from "react-router-dom";
 // import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
 // import HeroSection from "./Components/Hero/HeroSection";
@@ -31,8 +32,8 @@ function App() {
   // );
 
   return <div className="App">
-    <SignUp />
-    
+    <LogIn />
+
   </div>;
 }
 
