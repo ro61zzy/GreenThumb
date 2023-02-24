@@ -4,6 +4,9 @@ const Plant = require("./Models/plantModel");
 const Favorite = require("./Models/favoriteModel");
 const app = express();
 
+//user password encryption
+const bcrypt = require("bcrypt");
+
 //set dot-env variables
 require("dotenv").config();
 const { MONGO_GT, PORT } = process.env;
@@ -19,6 +22,43 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("<h1>Green Thumb</h1>");
 });
+
+/////////////////////////////////////////User
+
+//add user
+app.post("/api/signup", async (req, res) => {
+  try {
+    const newPassword = await bcrypt.hash(req.body.password, 10);
+    await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: newPassword,
+    });
+    res.json({ status: "ok" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ status: "error", message: "Error creating user." });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Add plant to database
 app.post("/plants", async (req, res) => {
