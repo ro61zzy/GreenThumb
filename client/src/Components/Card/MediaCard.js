@@ -32,7 +32,7 @@ export default function MediaCard(props) {
   // console.log("user data", decodedToken);
   function checkLoggedIn() {
     var logged = window.confirm(
-      "Seems u are not logged in?, want to create an account?"
+      "You are not Logged In. Create Account?"
     );
     if (logged) {
       window.location.href = "/signup";
