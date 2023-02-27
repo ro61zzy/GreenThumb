@@ -6,7 +6,7 @@ const Favorite = require("./Models/favoriteModel");
 const app = express();
 
 //user password encryption
-const bcrypt = require("bcrypt");
+var bcrypt = require('bcryptjs');
 
 //jwt authentication
 const jwt = require("jsonwebtoken");
