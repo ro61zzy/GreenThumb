@@ -85,6 +85,20 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
+//Get specific user by ID
+app.get("/profile/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id);
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
+
+
 //Add plant to database
 app.post("/plants", async (req, res) => {
   try {

@@ -4,7 +4,7 @@ import LockOpenIcon from "@mui/icons-material/LockOpen";
 import "./login.css";
 import axios from "axios";
 
-const LogIn = () => {
+const LogIn = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -30,6 +30,9 @@ const LogIn = () => {
         setError("An error occurred during login. Please try again later.");
       });
   };
+
+
+  
 
   return (
     <Grid container height="69vh">

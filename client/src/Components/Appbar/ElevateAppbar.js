@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -19,13 +19,15 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import GT from "../../Assets/sprout.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 const drawerWidth = 240;
 //const navItems = ["Home", "Favourites"];
 
 function ElevationScroll(props) {
   const { children, window } = props;
+  
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -47,6 +49,22 @@ ElevationScroll.propTypes = {
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [user, setUser] =useState({});
+  const { id } = useParams();
+
+
+  useEffect(() => {
+      const fetchUser = async () => {
+        const response = await axios.get(
+          `http://localhost:8000/profile/${id}`
+        );
+        setUser(response.data);
+        // console.log('Plant data:', response.data);
+      };
+  
+      fetchUser();
+    }, [id]);
+
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -182,6 +200,7 @@ function DrawerAppBar(props) {
                 </Link>
                
               </Box>
+              <a href={`/profile/${user._id}`}>
               <Box>
                 <AccountCircleIcon
                   sx={{
@@ -191,6 +210,7 @@ function DrawerAppBar(props) {
                   }}
                 />
               </Box>
+              </a>
             </Toolbar>
           </Container>
         </AppBar>

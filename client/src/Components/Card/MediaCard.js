@@ -20,7 +20,7 @@ export default function MediaCard(props) {
       setHasAccount("no account");
     } else {
       const decodedToken = jwt(token);
-      // 
+      //
       if (decodedToken.name) {
         setHasAccount("existing account");
       } else {
@@ -31,9 +31,7 @@ export default function MediaCard(props) {
 
   // console.log("user data", decodedToken);
   function checkLoggedIn() {
-    var logged = window.confirm(
-      "You are not Logged In. Create Account?"
-    );
+    var logged = window.confirm("You are not Logged In. Create Account?");
     if (logged) {
       window.location.href = "/signup";
     }
@@ -116,9 +114,6 @@ export default function MediaCard(props) {
                       {plant.price}
                     </Typography>
 
-                      
-
-
                     <Box
                       sx={{
                         display: "flex",
@@ -174,10 +169,6 @@ export default function MediaCard(props) {
                         </>
                       )}
                     </Box>
-
-
-
-                    
                   </Stack>
                 </Box>
               </Grid>
