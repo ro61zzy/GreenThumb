@@ -11,6 +11,19 @@
   height: 400px;
   object-fit: cover;
 }
+
+.icon-button {
+  /* display: flex;
+  text-align: center;
+ padding: 8px;*/
+  color: green;
+  background-color: transparent;
+  /* border: 2px solid #18990a; */
+  border-radius: 15px; 
+  border: none;
+  cursor: pointer;
+}
+
 @media (max-width: 450px) {
   .image{
      height: 300px;

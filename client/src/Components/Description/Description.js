@@ -4,11 +4,38 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import axios from "axios";
 import "./desc.css";
+import jwt from "jwt-decode";
 import { useParams } from "react-router-dom";
 
 const Description = (props) => {
   const [plant, setPlant] = useState({});
   const { id } = useParams();
+  const [hasAccount, setHasAccount] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setHasAccount("no account");
+    } else {
+      const decodedToken = jwt(token);
+      // 
+      if (decodedToken.name) {
+        setHasAccount("existing account");
+      } else {
+        setHasAccount("no account");
+      }
+    }
+  }, []);
+
+  // console.log("user data", decodedToken);
+  function checkLoggedIn() {
+    var logged = window.confirm(
+      "You are not Logged In. Create Account?"
+    );
+    if (logged) {
+      window.location.href = "/signup";
+    }
+  }
 
   useEffect(() => {
     const fetchPlant = async () => {
@@ -45,13 +72,78 @@ const Description = (props) => {
               <Box className="image">
                 <img src={plant.image} alt={plant.name} className="image" />
               </Box>
-              <Box sx={{ color: "green", pt: { xs: "12px", sm: "15px" } }}>
+
+              
+              {/* <Box sx={{ color: "green", pt: { xs: "12px", sm: "15px" } }}>
                 <FavoriteBorderIcon
                   sx={{ fontSize: { xs: "26px", sm: "42px" } }}
                   onClick={() => saveFavorites(plant)}
                 />
                 <WhatsAppIcon sx={{ fontSize: { xs: "28px", sm: "43px" } }} />
-              </Box>
+              </Box> */}
+
+
+
+                <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-around",
+                        p: "0 30%",
+                        gap: "40px",
+                        color: "green",
+                      }}
+                      p="5px"
+                      pb="15px"
+                    >
+                      {hasAccount === "no account" ? (
+                        <>
+                          <button className="icon-button">
+                            <FavoriteBorderIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                              onClick={() => {
+                                checkLoggedIn();
+                              }}
+                            />
+                          </button>
+
+                          <button
+                            className="icon-button"
+                            onClick={checkLoggedIn}
+                          >
+                            <WhatsAppIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                            />
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <button className="icon-button">
+                            <FavoriteBorderIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                              onClick={() => saveFavorites(plant)}
+                            />
+                          </button>
+
+                          <button
+                            className="icon-button"
+                            onClick={() =>
+                              window.open(
+                                `https://wa.me/${plant.seller_phone}?text=Hello! I'm interested in the ${plant.name} plant listed on GreenThumb, could I please get more info?.`
+                              )
+                            }
+                          >
+                            <WhatsAppIcon
+                              sx={{ fontSize: { xs: "26px", sm: "42px" } }}
+                            />
+                          </button>
+                        </>
+                      )}
+                    </Box>
+
+
+
+
+
             </Stack>
           </Box>
         </Grid>
