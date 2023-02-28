@@ -9,7 +9,7 @@ const User = (props) => {
     const [user, setUser] = useState({});
     const { id } = useParams();
 
-
+//this aint working
     useEffect(() => {
         const fetchUser = async () => {
           const response = await axios.get(
