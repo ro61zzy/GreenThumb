@@ -1,66 +1,47 @@
-import { Grid, Typography } from "@mui/material";
-import { Box } from "@mui/system";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Plant from "../../Assets/user.jpg";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const User = (props) => {
-    const [user, setUser] = useState({});
-    const { id } = useParams();
+const Profile = () => {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+useEffect(() => {
+  const token = localStorage.getItem('jwtToken');
+  if (!token) {
+    navigate('/login');
+  } else {
+    // extract the user ID from the JWT token
+    const { userId } = jwt.decode(token);
 
-//this aint working
-    useEffect(() => {
-        const fetchUser = async () => {
-          const response = await axios.get(
-            `http://localhost:8000/profile/${id}`
-          );
-          setUser(response.data);
-          console.log('User data:', response.data);
-        };
-    
-        fetchUser();
-      }, [id]);
+    // make a call to the API to retrieve the user details
+    fetch(`/profile/${userId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => response.json())
+    .then(data => setUser(data))
+    .catch(error => console.error(error));
+  }
+}, [navigate]);
 
 
+  const handleLogout = () => {
+    localStorage.removeItem('jwtToken');
+    navigate('/login');
+  }
 
-
+  if (!user) {
+    return null; // or loading spinner or other UI
+  }
 
   return (
-    <Box
-      sx={{
-        height: "40vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <h1>My Details</h1>
-      
-      <Grid sx={{ display: "flex", gap: "20px" }}>
-        <Grid item xs={6} sx={{ backgroundColor: "green" }}>
-          <Box className="image">
-            <img src={Plant} alt="plant pic" className="image" />
-          </Box>
-        </Grid>
-        <Grid item xs={6} sx={{ backgroundColor: "white" }}>
-          <Box
-            
-          >
-            <Typography sx={{
-              fontSize: "40px",
-              backgroundColor: "green",
-            }}>Name: {user.name}</Typography>
-            <Typography sx={{
-              fontSize: "40px",
-              backgroundColor: "green",
-            }}>Email: {user.email}</Typography>
-          </Box>
-        </Grid>
-      </Grid>
-    </Box>
+    <div>
+      <h1>{user.username}</h1>
+      <img src={user.image} alt={user.username} />
+      <p>{user.email}</p>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
   );
 };
 
-export default User;
+export default Profile;

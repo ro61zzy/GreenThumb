@@ -7,8 +7,8 @@ import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
 import Favourites from "./Components/Favorites/Favorites";
 import HomePage from "./Components/HomePage";
 import Description from "./Components/Description/Description";
-import User from "./Components/User/User";
-//import Footer from "./Components/Footer/Footer";
+import Footer from "./Components/Footer/Footer";
+//import User from "./Components/User/User";
 // import MediaCard from "./Components/Card/MediaCard";
 // import PhotoG from "./Components/Gallery/PhotoG";
 //import HeroSection from "./Components/Hero/HeroSection";
@@ -30,16 +30,16 @@ function App() {
           <Route path="/login" element={<LogIn />}/>
           <Route path="/signup" element={<SignUp />}/>
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
 
       </div>
     </BrowserRouter>
   );
 
-//   return <div className="App">
-//    <MediaCard favorites={favorites} setFavorites={setFavorites} />
+  // return <div className="App">
+  //  <User />
 
-//   </div>;
+  // </div>;
 }
 
 export default App;

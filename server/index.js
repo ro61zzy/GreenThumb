@@ -96,6 +96,42 @@ app.get("/profile/:id", async (req, res) => {
   }
 });
 
+///////////for profile page/////////////////////////
+//Get specific user by ID
+app.get("/profile/:id", authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id);
+
+    // ensure that the user ID in the JWT token matches the requested profile ID
+    if (user && user._id.toString() === req.user.userId) {
+      res.status(200).json(user);
+    } else {
+      res.status(403).json({ message: "Access denied" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (token == null) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
+  jwt.verify(token, secretWord, (err, user) => {
+    if (err) {
+      return res.status(403).json({ message: "Access denied" });
+    }
+
+    req.user = user;
+    next();
+  });
+}
+
+
 
 
 
