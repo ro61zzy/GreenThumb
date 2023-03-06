@@ -7,7 +7,7 @@ import DrawerAppBar from "./Components/Appbar/ElevateAppbar";
 import Favourites from "./Components/Favorites/Favorites";
 import HomePage from "./Components/HomePage";
 import Description from "./Components/Description/Description";
-import Footer from "./Components/Footer/Footer";
+//import Footer from "./Components/Footer/Footer";
 //import User from "./Components/User/User";
 // import MediaCard from "./Components/Card/MediaCard";
 // import PhotoG from "./Components/Gallery/PhotoG";
@@ -26,11 +26,11 @@ function App() {
           <Route exact path="/favorites" element={<Favourites />} />
           <Route path="/plants/:id" element={<Description />}/>
           <Route path="/favorites/:id" element={<Description />}/>
-          <Route path="/profile" element={<User />}/>
+          {/* <Route path="/profile" element={<User />}/> */}
           <Route path="/login" element={<LogIn />}/>
           <Route path="/signup" element={<SignUp />}/>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
 
       </div>
     </BrowserRouter>
